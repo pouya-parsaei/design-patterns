@@ -41,7 +41,7 @@ return [
     |
     */
 
-    'debug' => (bool) env('APP_DEBUG', false),
+    'debug' => (bool)env('APP_DEBUG', false),
 
     /*
     |--------------------------------------------------------------------------
@@ -197,6 +197,9 @@ return [
         App\Providers\EncoderServiceProvider::class,
         App\Providers\FileServiceProvider::class,
         App\Providers\PublisherServiceProvider::class,
+        App\Providers\FormBuilderServiceProvider::class,
+        App\Providers\DocumentFactoryServiceProvider::class,
+        App\Providers\ProductPresenterServiceProvider::class,
 
     ],
 

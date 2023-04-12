@@ -1,5 +1,11 @@
 <?php
 
+use App\Http\Controllers\EncoderController;
+use App\Http\Controllers\FileController;
+use App\Http\Controllers\FormBuilderController;
+use App\Http\Controllers\MessageController;
+use App\Http\Controllers\ProductController;
+use App\Http\Controllers\ReportController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -13,6 +19,9 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/',[\App\Http\Controllers\EncoderController::class,'encode']);
-Route::get('/file',[\App\Http\Controllers\FileController::class,'download']);
-Route::get('/publish',[\App\Http\Controllers\MessageController::class,'publish']);
+Route::get('/', [EncoderController::class, 'encode']);
+Route::get('file', [FileController::class, 'download']);
+Route::get('publish', [MessageController::class, 'publish']);
+Route::get('form-builder', [FormBuilderController::class, 'output']);
+Route::get('documents', [ReportController::class, 'printReport']);
+Route::get('products', [ProductController::class, 'presentProduct']);
