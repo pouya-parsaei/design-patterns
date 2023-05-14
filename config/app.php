@@ -200,6 +200,9 @@ return [
         App\Providers\FormBuilderServiceProvider::class,
         App\Providers\DocumentFactoryServiceProvider::class,
         App\Providers\ProductPresenterServiceProvider::class,
+        App\Providers\OnlinePaymentServiceProvider::class,
+        App\Providers\NotificationServiceProvider::class,
+        App\Providers\PaymentModuleProvider::class,
 
     ],
 
