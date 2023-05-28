@@ -203,6 +203,7 @@ return [
         App\Providers\OnlinePaymentServiceProvider::class,
         App\Providers\NotificationServiceProvider::class,
         App\Providers\PaymentModuleProvider::class,
+        App\Providers\PostServiceProvider::class,
 
     ],
 
