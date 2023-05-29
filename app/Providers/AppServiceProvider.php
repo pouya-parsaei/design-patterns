@@ -3,6 +3,8 @@
 namespace App\Providers;
 
 use Illuminate\Support\ServiceProvider;
+use Src\Mediator\EventDispatcher\EventDispatcher;
+use Src\Mediator\EventDispatcher\Logger;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -11,7 +13,10 @@ class AppServiceProvider extends ServiceProvider
      */
     public function register(): void
     {
-        //
+        $eventDispatcher = new EventDispatcher();
+        $eventDispatcher->attach('user:deleted', new Logger());
+
+        $this->app->singleton(EventDispatcher::class, $eventDispatcher);
     }
 
     /**
